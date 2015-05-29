@@ -2,9 +2,14 @@
 <html ng-app='Life'>
 <head>
 	<title>Game of Life in AngularJS</title>
+	<link rel="stylesheet"  href="style.css">
 </head>
 <body>
-
+	<div class='game-container' ng-controller='MainController as main'>
+		<div ng-repeat='cell in main.cellsArray' class='cell'></div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src='app.js'></script>
+	<script src='main.controller.js'></script>
 </body>
 </html>

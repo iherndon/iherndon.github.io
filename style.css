@@ -1,0 +1,12 @@
+.game-container{
+	width: 800px;
+	height: 800px;
+}
+
+.cell{
+	height: 18px;
+	width: 18px;
+	border: solid 1px;
+	float: left;
+	background: none;
+}
