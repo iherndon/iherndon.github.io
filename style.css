@@ -1,6 +1,11 @@
+.game-board{
+	width: 1200px;
+
+}
 .game-container{
 	width: 800px;
 	height: 800px;
+	float: left;
 }
 
 .cell{
@@ -9,4 +14,9 @@
 	border: solid 1px;
 	float: left;
 	background: none;
+}
+
+.button-container{
+	float: left;
+	width: 400px;
 }
