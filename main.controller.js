@@ -69,7 +69,10 @@
 			}, 150)
 		}
 		vm.createCells();
-		GameBoardFactory.setBoardBeacon(vm.cellsArray);
+		// GameBoardFactory.setBoardBeacon(vm.cellsArray);
+		// GameBoardFactory.setBoardGliderGun(vm.cellsArray);
+		// GameBoardFactory.setBoardPulsar(vm.cellsArray);
+		GameBoardFactory.setBoardCross(vm.cellsArray);
 
 
 		function Cell (position, isAlive, nextIteration){
