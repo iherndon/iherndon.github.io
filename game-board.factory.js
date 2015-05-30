@@ -199,7 +199,6 @@
 					array[546].isAlive = true;
 					array[547].isAlive = true;
 					array[548].isAlive = true;
-
 				}
 
 			}

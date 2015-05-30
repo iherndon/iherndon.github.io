@@ -54,25 +54,22 @@
 				cell.changeStatus();
 			})
 		}
-		vm.runGameOnInterval = function(repititions){
+		vm.runGameOnInterval = function(){
 			console.log('started');
-			var x = 0;
-			var intervals = $interval (function(){
+			vm.intervals = $interval (function(){
 				vm.iterator();
 				vm.changeStatusAll();
-				x++;
-
-				if (x === repititions){
-					$interval.cancel(intervals)
-					console.log('stopped');
-				}
 			}, 150)
+		}
+		vm.stopGame = function (){
+			$interval.cancel(vm.intervals);
+			console.log('stppped');
 		}
 		vm.createCells();
 		// GameBoardFactory.setBoardBeacon(vm.cellsArray);
-		// GameBoardFactory.setBoardGliderGun(vm.cellsArray);
+		GameBoardFactory.setBoardGliderGun(vm.cellsArray);
 		// GameBoardFactory.setBoardPulsar(vm.cellsArray);
-		GameBoardFactory.setBoardCross(vm.cellsArray);
+		// GameBoardFactory.setBoardCross(vm.cellsArray);
 
 
 		function Cell (position, isAlive, nextIteration){
