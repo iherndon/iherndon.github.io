@@ -18,13 +18,14 @@
 			var array=[];
 			
 			for (var i = 0; i < vm.numbersToCalculateSurroundingCells.length; i++){
-				var added = cell.position + vm.numbersToCalculateSurroundingCells[i];
-				var subtracted = cell.position - vm.numbersToCalculateSurroundingCells[i];
-				if(added >= 0 && added < 1600 ){
+				var currentNumber = vm.numbersToCalculateSurroundingCells[i];
+				var added = cell.position + currentNumber;
+				var subtracted = cell.position - currentNumber;
+				if(((cell.position % 40 === 0 && currentNumber !== 39) || (cell.position - 39) % 40 === 0 && (currentNumber === 39 || currentNumber === 40) || (cell.position - 39) % 40 !== 0 && cell.position % 40 !== 0) && added < 1600){
 					array.push(vm.cellsArray[added]);	
 				}
-				if(subtracted >= 0 && subtracted < 1600 ){
-					array.push(vm.cellsArray[subtracted]);
+				if((cell.position % 40 === 0 && (currentNumber !== 41 && currentNumber !== 1) || ((cell.position-39) % 40 == 0 && (currentNumber !== 41 && currentNumber !== 39)) || (cell.position % 40 !== 0 && (cell.position-39) % 40 !== 0)) && subtracted >= 0 ){
+					array.push(vm.cellsArray[subtracted]);	
 				}
 			}
 			return array;
