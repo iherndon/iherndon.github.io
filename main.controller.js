@@ -24,7 +24,7 @@
 				if(((cell.position % 40 === 0 && currentNumber !== 39) || (cell.position - 39) % 40 === 0 && (currentNumber === 39 || currentNumber === 40) || (cell.position - 39) % 40 !== 0 && cell.position % 40 !== 0) && added < 1600){
 					array.push(vm.cellsArray[added]);	
 				}
-				if((cell.position % 40 === 0 && (currentNumber !== 41 && currentNumber !== 1) || ((cell.position-39) % 40 == 0 && (currentNumber !== 41 && currentNumber !== 39)) || (cell.position % 40 !== 0 && (cell.position-39) % 40 !== 0)) && subtracted >= 0 ){
+				if((cell.position % 40 === 0 && (currentNumber !== 41 && currentNumber !== 1) || ((cell.position-39) % 40 == 0 && (currentNumber !== 39)) || (cell.position % 40 !== 0 && (cell.position-39) % 40 !== 0)) && subtracted >= 0 ){
 					array.push(vm.cellsArray[subtracted]);	
 				}
 			}
@@ -38,7 +38,7 @@
 					if (item.isAlive === true)
 						alive ++;
 				});
-				if(cell.isAlive === true && (alive<2 || alive > 3)) {
+				if(cell.isAlive === true && (alive < 2 || alive > 3)) {
 					cell.nextIteration = false;
 				} else if (cell.isAlive === false && alive === 3) {
 					cell.nextIteration = true;
@@ -67,8 +67,8 @@
 		}
 		vm.createCells();
 		// GameBoardFactory.setBoardBeacon(vm.cellsArray);
-		GameBoardFactory.setBoardGliderGun(vm.cellsArray);
-		// GameBoardFactory.setBoardPulsar(vm.cellsArray);
+		// GameBoardFactory.setBoardGliderGun(vm.cellsArray);
+		GameBoardFactory.setBoardPulsar(vm.cellsArray);
 		// GameBoardFactory.setBoardCross(vm.cellsArray);
 
 
