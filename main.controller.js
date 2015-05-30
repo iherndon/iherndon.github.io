@@ -2,7 +2,7 @@
 	angular.module('Life')
 		.controller('MainController', MainController);
 
-	function MainController($timeout, $interval){
+	function MainController($timeout, $interval, GameBoardFactory){
 		var vm = this;
 		vm.name = 'Ivan';
 		vm.cellsArray = [];
@@ -69,6 +69,7 @@
 			}, 150)
 		}
 		vm.createCells();
+		GameBoardFactory.setBoardBeacon(vm.cellsArray);
 
 
 		function Cell (position, isAlive, nextIteration){
