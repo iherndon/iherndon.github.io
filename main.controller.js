@@ -2,19 +2,17 @@
 	angular.module('Life')
 		.controller('MainController', MainController);
 
-	function MainController($timeout, $interval, GameBoardFactory){
+	function MainController($interval, GameBoardFactory){
 		var vm = this;
 		vm.name = 'Ivan';
 		vm.cellsArray = [];
-		vm.isRunning = null; 
-		vm.checkForAliveCells = function(){
-			vm.cellsArray.forEach(function(cell){
-				if (cell.isAlive === true){
-					return true;
-				} else {
+		vm.isRunning = null;
+		vm.isBoardEmpty = function(){
+			for (var i = 0; i < vm.cellsArray.length; i++){
+				if (vm.cellsArray[i].isAlive === true)
 					return false;
-				}
-			});
+			}
+			return true;
 		}
 		vm.aliveToggle = function(cell){
 			cell.isAlive = !cell.isAlive;
@@ -65,17 +63,17 @@
 			})
 		}
 		vm.runGameOnInterval = function(){
-			console.log('started');
-			vm.isRunning = true;
-			vm.intervals = $interval (function(){
-				vm.iterator();
-				vm.changeStatusAll();
-			},125)
+				console.log('started');
+				vm.isRunning = true;
+				vm.intervals = $interval (function(){
+					vm.iterator();
+					vm.changeStatusAll();
+				},125)
 		}
 		vm.stopGame = function (){
 			vm.isRunning = false;
 			$interval.cancel(vm.intervals);
-			console.log('stppped');
+			console.log('stopped');
 		}
 		vm.startingPositions = {
 			'beacon': GameBoardFactory.setBoardBeacon,

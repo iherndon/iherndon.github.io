@@ -31,7 +31,8 @@
 				</div>
 				<button type='submit' class='submit'>Submit</button>
 			</form>
-			<button ng-hide='main.isRunning' class='start-button' ng-click='main.runGameOnInterval()'>Start</button><button ng-show='main.isRunning' class='stop-button' ng-click='main.stopGame()'>Stop</button><button ng-hide='main.isRunning' ng-click='main.clearBoard()'>Clear</button></div>
+			<h3>Also, Create or Alter Existing Pattern By Clicking Cells</h3>
+			<button ng-disabled='main.isBoardEmpty()' ng-hide='main.isRunning' class='start-button' ng-click='main.runGameOnInterval()'>Start</button><button ng-show='main.isRunning' class='stop-button' ng-click='main.stopGame()'>Stop</button><button ng-hide='main.isRunning || main.isBoardEmpty()' ng-click='main.clearBoard()'>Clear</button></div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src='app.js'></script>
