@@ -6,6 +6,7 @@
 		var vm = this;
 		vm.name = 'Ivan';
 		vm.cellsArray = [];
+		vm.isRunning = null; 
 		vm.aliveToggle = function(cell){
 			cell.isAlive = !cell.isAlive;
 		}
@@ -56,21 +57,38 @@
 		}
 		vm.runGameOnInterval = function(){
 			console.log('started');
+			vm.isRunning = true;
 			vm.intervals = $interval (function(){
 				vm.iterator();
 				vm.changeStatusAll();
-			}, 150)
+			},125)
 		}
 		vm.stopGame = function (){
+			vm.isRunning = false;
 			$interval.cancel(vm.intervals);
 			console.log('stppped');
 		}
-		vm.createCells();
-		// GameBoardFactory.setBoardBeacon(vm.cellsArray);
-		// GameBoardFactory.setBoardGliderGun(vm.cellsArray);
-		GameBoardFactory.setBoardPulsar(vm.cellsArray);
-		// GameBoardFactory.setBoardCross(vm.cellsArray);
+		vm.startingPositions = {
+			'beacon': GameBoardFactory.setBoardBeacon,
+			'gliderGun': GameBoardFactory.setBoardGliderGun,
+			'pulsar': GameBoardFactory.setBoardPulsar,
+			'cross': GameBoardFactory.setBoardCross,
+		}
+		vm.getStartingPosition = function (name){
+			for (var board in vm.startingPositions){
+				if (name === board){
+					vm.clearBoard();
+					return vm.startingPositions[board](vm.cellsArray);
+				}
+			}
+		}
+		vm.clearBoard = function() {
+			vm.cellsArray.forEach(function(cell){
+				cell.isAlive = false;
+			});
+		}
 
+		vm.createCells();
 
 		function Cell (position, isAlive, nextIteration){
 			this.position = position;
@@ -81,7 +99,7 @@
 			}
 			this.checkStatus = function(){
 				if(this.isAlive){
-					return {'background': 'red'}
+					return {'background': 'green'}
 				} else {
 					return {'background': 'none'}
 				}

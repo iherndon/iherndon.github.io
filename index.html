@@ -6,10 +6,30 @@
 </head>
 <body>
 	<div class='game-board' ng-controller='MainController as main'>
-	<div class='game-container'>
-		<div ng-repeat='cell in main.cellsArray' class='cell' ng-click='main.aliveToggle(cell)' ng-style='cell.checkStatus()'></div>
-	</div>
-	<div class='button-container'><button ng-click='main.runGameOnInterval(100)'>Start</button><button ng-click='main.stopGame()'>Stop</button></div>
+		<div class='game-container'>
+			<div ng-repeat='cell in main.cellsArray' class='cell' ng-click='main.aliveToggle(cell)' ng-style='cell.checkStatus()'></div>
+		</div>
+		<div class='button-container'>
+			<h1>Conway's Game of Life</h1>
+			<h3>Rules</h3>
+			<ul>
+				<li>Any live cell with fewer than two live neighbors dies, as if caused by under-population</li>
+				<li>Any live cell with two or three live neighbors lives on to the next generation</li>
+				<li>Any live cell with more than three live neighbors dies, as if by overcrowding</li>
+				<li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction</li>
+			</ul>
+			<form class='board-selection' ng-submit='main.getStartingPosition(main.startingPositionName)'>
+				<div class='styled-select'>
+				<select ng-model='main.startingPositionName'>
+					<option value='beacon'>Beacon</option>
+					<option value='gliderGun'>Glider Gun</option>
+					<option value='pulsar'>Pulsar</option>
+					<option value='cross'>Cross</option>
+				</select>
+				</div>
+				<input type='submit' class='submit'>
+			</form>
+			<button ng-hide='main.isRunning' class='start-button' ng-click='main.runGameOnInterval()'>Start</button><button ng-show='main.isRunning' class='stop-button' ng-click='main.stopGame()'>Stop</button><button ng-click='main.clearBoard()'>Clear</button></div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src='app.js'></script>

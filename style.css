@@ -1,5 +1,5 @@
 .game-board{
-	width: 1200px;
+	width: 1680px;
 
 }
 .game-container{
@@ -18,5 +18,49 @@
 
 .button-container{
 	float: left;
-	width: 400px;
+	width: 700px;
+	padding-left: 25px;
+}
+
+button {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: none;
+	margin-left: 10px;
+	background-color: #428bca;
+	color: #fff;
+	font-size: 20px;
+	outline: none;
+}
+
+.board-selection {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.styled-select {
+   width: 240px;
+   height: 34px;
+}
+
+.styled-select select {
+   background: transparent;
+   width: 240px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   background-color: grey;
+   color: white;
+}
+
+.stop-button {
+	background-color: #d9534f;
+}
+
+.start-button {
+	background-color: #5cb85c;
 }
