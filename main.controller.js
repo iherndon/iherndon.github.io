@@ -7,6 +7,15 @@
 		vm.name = 'Ivan';
 		vm.cellsArray = [];
 		vm.isRunning = null; 
+		vm.checkForAliveCells = function(){
+			vm.cellsArray.forEach(function(cell){
+				if (cell.isAlive === true){
+					return true;
+				} else {
+					return false;
+				}
+			});
+		}
 		vm.aliveToggle = function(cell){
 			cell.isAlive = !cell.isAlive;
 		}

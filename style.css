@@ -35,7 +35,7 @@ button {
 }
 
 .board-selection {
-	margin-top: 25px;
+	margin-top: 5px;
 	margin-bottom: 25px;
 }
 
@@ -55,6 +55,19 @@ button {
    height: 34px;
    background-color: grey;
    color: white;
+}
+
+.submit {
+	width: 70.348px;
+	height: 34px;
+	border-radius: 4px;
+	font-size: 16px;
+	margin-top: 5px;
+	background-color: #fff;
+	color: #333;
+	border-color: #ccc;
+	border: 1px solid;
+	margin-left: 0;
 }
 
 .stop-button {
