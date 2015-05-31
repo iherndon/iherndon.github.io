@@ -80,6 +80,7 @@
 			'gliderGun': GameBoardFactory.setBoardGliderGun,
 			'pulsar': GameBoardFactory.setBoardPulsar,
 			'cross': GameBoardFactory.setBoardCross,
+			'perpendicular': GameBoardFactory.setBoardPerpendicular,
 		}
 		vm.getStartingPosition = function (name){
 			for (var board in vm.startingPositions){

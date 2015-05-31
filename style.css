@@ -16,6 +16,15 @@
 	background: none;
 }
 
+.start-button {
+	background-color: #5cb85c;
+}
+
+.disabled{
+	background-color: grey;
+	color: black;
+}
+
 .button-container{
 	float: left;
 	width: 700px;
@@ -74,6 +83,3 @@ button {
 	background-color: #d9534f;
 }
 
-.start-button {
-	background-color: #5cb85c;
-}

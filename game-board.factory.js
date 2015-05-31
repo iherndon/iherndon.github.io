@@ -4,6 +4,14 @@
 
 		function GameBoardFactory () {
 			return {
+				setBoardPerpendicular: function(array){
+					array[659].isAlive = true;
+					array[699].isAlive = true;
+					array[739].isAlive = true;
+					array[779].isAlive = true;
+					array[778].isAlive = true;
+					array[780].isAlive = true;	
+				},
 				setBoardBeacon: function(array) {
 					array[416].isAlive = true;
 					array[417].isAlive = true;
