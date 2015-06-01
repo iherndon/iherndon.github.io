@@ -22,7 +22,7 @@
 			<h3>Choose a Starting Pattern</h3>
 			<form class='board-selection' ng-submit='main.getStartingPosition(main.startingPositionName)'>
 				<div class='styled-select'>
-				<select ng-model='main.startingPositionName'>
+				<select ng-disabled='main.isRunning' ng-model='main.startingPositionName'>
 					<option value='beacon'>Beacon</option>
 					<option value='gliderGun'>Glider Gun</option>
 					<option value='pulsar'>Pulsar</option>
