@@ -33,7 +33,7 @@
 					<option value='mirrorPerpendicular'>Mirror Perpendicular</option>
 				</select>
 				</div>
-				<button type='submit' class='submit'>Submit</button>
+				<button ng-disabled='main.isRunning' type='submit' class='submit'>Submit</button>
 			</form>
 			<h3>Also, Create or Alter Existing Patterns By Clicking Cells</h3>
 			<button ng-class="{'disabled': main.isBoardEmpty()}" ng-disabled='main.isBoardEmpty()' ng-hide='main.isRunning' class='start-button' ng-click='main.runGameOnInterval()'>Start</button><button ng-show='main.isRunning' class='stop-button' ng-click='main.stopGame()'>Stop</button><button ng-hide='main.isRunning || main.isBoardEmpty()' ng-click='main.clearBoard()'>Clear</button></div>
