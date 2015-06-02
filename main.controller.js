@@ -83,6 +83,7 @@
 			'perpendicular': GameBoardFactory.setBoardPerpendicular,
 			'plusSquare': GameBoardFactory.setBoardPlusSquare,
 			'plusSquareDiamond': GameBoardFactory.setBoardPlusSquareDiamond,
+			'mirrorPerpendicular': GameBoardFactory.setBoardMirrorPerpendicular,
 		}
 		vm.getStartingPosition = function (name){
 			for (var board in vm.startingPositions){

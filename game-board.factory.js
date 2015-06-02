@@ -4,6 +4,20 @@
 
 		function GameBoardFactory () {
 			return {
+				setBoardMirrorPerpendicular: function(array){
+					array[618].isAlive = true;
+					array[619].isAlive = true;
+					array[620].isAlive = true;
+					array[659].isAlive = true;
+					array[699].isAlive = true;
+					array[739].isAlive = true;
+					array[859].isAlive = true;
+					array[899].isAlive = true;
+					array[939].isAlive = true;
+					array[978].isAlive = true;
+					array[979].isAlive = true;
+					array[980].isAlive = true;
+				},
 				setBoardPlusSquareDiamond: function(array){
 					array[414].isAlive = true;
 					array[415].isAlive = true;
