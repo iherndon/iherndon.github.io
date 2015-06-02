@@ -81,6 +81,8 @@
 			'pulsar': GameBoardFactory.setBoardPulsar,
 			'cross': GameBoardFactory.setBoardCross,
 			'perpendicular': GameBoardFactory.setBoardPerpendicular,
+			'plusSquare': GameBoardFactory.setBoardPlusSquare,
+			'plusSquareDiamond': GameBoardFactory.setBoardPlusSquareDiamond,
 		}
 		vm.getStartingPosition = function (name){
 			for (var board in vm.startingPositions){
